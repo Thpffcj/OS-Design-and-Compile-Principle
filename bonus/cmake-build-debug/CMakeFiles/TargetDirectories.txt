@@ -1,0 +1,3 @@
+F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/MyWorld.dir
+F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/rebuild_cache.dir

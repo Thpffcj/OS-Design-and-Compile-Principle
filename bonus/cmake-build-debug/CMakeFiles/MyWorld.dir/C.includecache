@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/CLion/MyWorld/allocated.c
+allocated.h
+F:/CLion/MyWorld/allocated.h
+type.h
+F:/CLion/MyWorld/type.h
+bottom.h
+F:/CLion/MyWorld/bottom.h
+
+F:/CLion/MyWorld/allocated.h
+
+F:/CLion/MyWorld/bottom.h
+type.h
+F:/CLion/MyWorld/type.h
+
+F:/CLion/MyWorld/call.c
+type.h
+F:/CLion/MyWorld/type.h
+bottom.h
+F:/CLion/MyWorld/bottom.h
+allocated.h
+F:/CLion/MyWorld/allocated.h
+
+F:/CLion/MyWorld/main.c
+stdio.h
+-
+
+F:/CLion/MyWorld/type.h
+
