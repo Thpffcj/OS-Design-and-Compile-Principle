@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MyWorld.dir/main.c.obj"
-  "CMakeFiles/MyWorld.dir/call.c.obj"
   "CMakeFiles/MyWorld.dir/allocated.c.obj"
+  "CMakeFiles/MyWorld.dir/bottom.c.obj"
+  "CMakeFiles/MyWorld.dir/call.c.obj"
+  "CMakeFiles/MyWorld.dir/test.c.obj"
   "MyWorld.pdb"
   "MyWorld.exe"
   "MyWorld.exe.manifest"

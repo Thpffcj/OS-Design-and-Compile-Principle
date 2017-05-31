@@ -1,66 +1,122 @@
 //
 // Created by Thpffcj on 2017/5/29.
 //
+#include <stdio.h>
 #include "allocated.h"
 #include "type.h"
 #include "bottom.h"
-data_unit memory[MEMORY_SIZE];
 
 int str_length(unsigned char *str);
-int str_to_int(unsigned char *str);
-void int_to_str(int input, unsigned char *str);
+int str_to_int(unsigned char *str, int location);
+void int_to_str(int input, unsigned char *str, int location);
 
 int unallocate_table(int size)
 {
-    int i = 1024;
+    printf("%s", "size ");
+    printf("%d\n", size);
     int begin = 0;
-    int size1 = 0;
-    unsigned char* cbegin = "";
-    unsigned char* csize = "";
-    for(; i<2048; i+=3)
+    int remaining = 0;
+    unsigned char address[4];
+    unsigned char length[4];
+    for(int i = 1024; i<2048; i+=12)
     {
-        if(memory[i+2] > size)
+        for(int j=0; j<4; j++)
         {
-            *cbegin = memory[i+1];
-            begin = str_to_int(cbegin) + size;
-            int_to_str(begin, cbegin);
-            *csize = memory[i+2];
-            size1 = str_to_int(csize) - size;
-            int_to_str(size1, csize);
+            length[j] = mem_read(i+8+j);
         }
-        return memory[i+1] - size;
+        int len = str_to_int(length, 0);
+        printf("%s", "len ");
+        printf("%d\n", len);
+        if( len > size) {
+            for(int j=0; j<4; j++)
+            {
+                address[j] = mem_read(i+4+j);
+            }
+            begin = str_to_int(address, 0) + size;
+            printf("%s", "begin ");
+            printf("%d\n", begin);
+            int_to_str(begin, address, 0);
+            for(int j=0; j<4; j++)
+            {
+                mem_write(address[j], i+4+j);
+            }
+
+            for(int j=0; j<4; j++)
+            {
+                length[j] = mem_read(i+8+j);
+            }
+            remaining = str_to_int(length, 0) - size;
+            int_to_str(remaining, length, 0);
+            for(int j=0; j<4; j++)
+            {
+                mem_write(length[j], i+8+j);
+            }
+
+            return begin - size;
+        }
     }
     return -1;
 }
 
 int allocate_table(int pid, int size)
 {
+    unsigned char mid[4];
+    unsigned char address[4];
+    unsigned char length[4];
+    unsigned char id;
+
     int location;
     location = unallocate_table(size);
+    printf("%s", "location ");
+    printf("%d\n", location);
     if(location == -1)
     {
         return -1;
     }
-    for(int i=0; i<1024; i+=3)
+    for(int i=0; i<1024; i+=12)
     {
-        if(memory[i] == 0)
+        id = mem_read(i);
+        if(id == '0')
         {
-            memory[i] = pid;
-            memory[i+1] = location;
-            memory[i+2] = size;
+            int_to_str(pid, mid, 0);
+            int_to_str(location, address, 0);
+            int_to_str(size, length, 0);
+            for(int j=0; j<4; j++)
+            {
+                mem_write(mid[j], i+j);
+                mem_write(address[j], i+4+j);
+                mem_write(length[j], i+8+j);
+            }
             return location;
         }
     }
     return -1;
 }
 
-int is_legal(int pid, int address)
+int is_legal(int pid, int address1)
 {
-    for(int i=0; i<1024; i+=3)
+    unsigned char mid[4];
+    unsigned char address[4];
+
+    printf("%s", "address ");
+    printf("%d\n", address1);
+    int ppid;
+    int padd;
+    for(int i=0; i<1024; i+=12)
     {
-        if(memory[i+1] == address)
+        for(int j=0; j<4; j++)
         {
-            if(memory[i] == pid)
+            address[j] = mem_read(i+4+j);
+        }
+        padd = str_to_int(address, 0);
+        if(padd == address1)
+        {
+            for(int j=0; j<4; j++)
+            {
+                mid[j] = mem_read(i+j);
+            }
+            ppid = str_to_int(mid, 0);
+            if(ppid == pid)
             {
                 return 1;
             }
@@ -70,47 +126,25 @@ int is_legal(int pid, int address)
 }
 
 //数字转字符串
-void int_to_str(int input, unsigned char *str) {
-    int num = input;
-    int n = num % 10;
-    unsigned char tmp[20];
-
-    int i = 0;
-    while (n > 0) {
-        tmp[i] = (unsigned char) (n + '0');
-        i++;
-        num = num / 10;
-        n = num % 10;
-    }
-    tmp[i] = '\0';
-
-    for (i = 0; i <= str_length(tmp) - 1; i++) {
-        str[i] = tmp[str_length(tmp) - i - 1];
-    }
-    str[i] = '\0';
-}
-
-int str_to_int(unsigned char *str)
+void int_to_str(int input, unsigned char *str, int location)
 {
-    int length = str_length(str);
-    int result = 0;
-    for(int i=0; i<length; i++){
-        result = (result + str[i]) * 10;
+    int num = input;
+    int n = num % 100;
+
+    for(int i=3; i>=0; i--)
+    {
+        str[location + i] = (unsigned char) (n);
+        num = num / 100;
+        n = num % 100;
     }
-    return result;
 }
 
-//计算字符串的长度
-int str_length(unsigned char *str) {
-    int i;
-    int size = 0;
-
-    for (i = 0; ; i++) {
-        if (str[i] != '\0') {
-            size++;
-        } else {
-            break;
-        }
+int str_to_int(unsigned char *str, int location)
+{
+    int result = 0;
+    for(int i=0; i<3; i++){
+        result = (result + str[location + i]) * 100;
     }
-    return size;
+    result = result + str[location + 3];
+    return result;
 }

@@ -6,10 +6,22 @@ CMakeFiles/MyWorld.dir/allocated.c.obj
  F:/CLion/MyWorld/allocated.h
  F:/CLion/MyWorld/bottom.h
  F:/CLion/MyWorld/type.h
+CMakeFiles/MyWorld.dir/bottom.c.obj
+ F:/CLion/MyWorld/bottom.c
+ F:/CLion/MyWorld/bottom.h
+ F:/CLion/MyWorld/type.h
 CMakeFiles/MyWorld.dir/call.c.obj
  F:/CLion/MyWorld/allocated.h
  F:/CLion/MyWorld/bottom.h
  F:/CLion/MyWorld/call.c
  F:/CLion/MyWorld/type.h
 CMakeFiles/MyWorld.dir/main.c.obj
+ F:/CLion/MyWorld/allocated.h
  F:/CLion/MyWorld/main.c
+ F:/CLion/MyWorld/test.h
+CMakeFiles/MyWorld.dir/test.c.obj
+ F:/CLion/MyWorld/bottom.h
+ F:/CLion/MyWorld/call.h
+ F:/CLion/MyWorld/test.c
+ F:/CLion/MyWorld/test.h
+ F:/CLion/MyWorld/type.h

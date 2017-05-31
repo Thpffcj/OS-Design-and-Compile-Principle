@@ -80,33 +80,9 @@ CMakeFiles/MyWorld.dir/main.c.obj.provides: CMakeFiles/MyWorld.dir/main.c.obj.re
 CMakeFiles/MyWorld.dir/main.c.obj.provides.build: CMakeFiles/MyWorld.dir/main.c.obj
 
 
-CMakeFiles/MyWorld.dir/call.c.obj: CMakeFiles/MyWorld.dir/flags.make
-CMakeFiles/MyWorld.dir/call.c.obj: ../call.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MyWorld.dir/call.c.obj"
-	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MyWorld.dir\call.c.obj   -c F:\CLion\MyWorld\call.c
-
-CMakeFiles/MyWorld.dir/call.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MyWorld.dir/call.c.i"
-	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E F:\CLion\MyWorld\call.c > CMakeFiles\MyWorld.dir\call.c.i
-
-CMakeFiles/MyWorld.dir/call.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MyWorld.dir/call.c.s"
-	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S F:\CLion\MyWorld\call.c -o CMakeFiles\MyWorld.dir\call.c.s
-
-CMakeFiles/MyWorld.dir/call.c.obj.requires:
-
-.PHONY : CMakeFiles/MyWorld.dir/call.c.obj.requires
-
-CMakeFiles/MyWorld.dir/call.c.obj.provides: CMakeFiles/MyWorld.dir/call.c.obj.requires
-	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/call.c.obj.provides.build
-.PHONY : CMakeFiles/MyWorld.dir/call.c.obj.provides
-
-CMakeFiles/MyWorld.dir/call.c.obj.provides.build: CMakeFiles/MyWorld.dir/call.c.obj
-
-
 CMakeFiles/MyWorld.dir/allocated.c.obj: CMakeFiles/MyWorld.dir/flags.make
 CMakeFiles/MyWorld.dir/allocated.c.obj: ../allocated.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MyWorld.dir/allocated.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MyWorld.dir/allocated.c.obj"
 	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MyWorld.dir\allocated.c.obj   -c F:\CLion\MyWorld\allocated.c
 
 CMakeFiles/MyWorld.dir/allocated.c.i: cmake_force
@@ -128,23 +104,99 @@ CMakeFiles/MyWorld.dir/allocated.c.obj.provides: CMakeFiles/MyWorld.dir/allocate
 CMakeFiles/MyWorld.dir/allocated.c.obj.provides.build: CMakeFiles/MyWorld.dir/allocated.c.obj
 
 
+CMakeFiles/MyWorld.dir/bottom.c.obj: CMakeFiles/MyWorld.dir/flags.make
+CMakeFiles/MyWorld.dir/bottom.c.obj: ../bottom.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MyWorld.dir/bottom.c.obj"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MyWorld.dir\bottom.c.obj   -c F:\CLion\MyWorld\bottom.c
+
+CMakeFiles/MyWorld.dir/bottom.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MyWorld.dir/bottom.c.i"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E F:\CLion\MyWorld\bottom.c > CMakeFiles\MyWorld.dir\bottom.c.i
+
+CMakeFiles/MyWorld.dir/bottom.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MyWorld.dir/bottom.c.s"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S F:\CLion\MyWorld\bottom.c -o CMakeFiles\MyWorld.dir\bottom.c.s
+
+CMakeFiles/MyWorld.dir/bottom.c.obj.requires:
+
+.PHONY : CMakeFiles/MyWorld.dir/bottom.c.obj.requires
+
+CMakeFiles/MyWorld.dir/bottom.c.obj.provides: CMakeFiles/MyWorld.dir/bottom.c.obj.requires
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/bottom.c.obj.provides.build
+.PHONY : CMakeFiles/MyWorld.dir/bottom.c.obj.provides
+
+CMakeFiles/MyWorld.dir/bottom.c.obj.provides.build: CMakeFiles/MyWorld.dir/bottom.c.obj
+
+
+CMakeFiles/MyWorld.dir/call.c.obj: CMakeFiles/MyWorld.dir/flags.make
+CMakeFiles/MyWorld.dir/call.c.obj: ../call.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MyWorld.dir/call.c.obj"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MyWorld.dir\call.c.obj   -c F:\CLion\MyWorld\call.c
+
+CMakeFiles/MyWorld.dir/call.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MyWorld.dir/call.c.i"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E F:\CLion\MyWorld\call.c > CMakeFiles\MyWorld.dir\call.c.i
+
+CMakeFiles/MyWorld.dir/call.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MyWorld.dir/call.c.s"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S F:\CLion\MyWorld\call.c -o CMakeFiles\MyWorld.dir\call.c.s
+
+CMakeFiles/MyWorld.dir/call.c.obj.requires:
+
+.PHONY : CMakeFiles/MyWorld.dir/call.c.obj.requires
+
+CMakeFiles/MyWorld.dir/call.c.obj.provides: CMakeFiles/MyWorld.dir/call.c.obj.requires
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/call.c.obj.provides.build
+.PHONY : CMakeFiles/MyWorld.dir/call.c.obj.provides
+
+CMakeFiles/MyWorld.dir/call.c.obj.provides.build: CMakeFiles/MyWorld.dir/call.c.obj
+
+
+CMakeFiles/MyWorld.dir/test.c.obj: CMakeFiles/MyWorld.dir/flags.make
+CMakeFiles/MyWorld.dir/test.c.obj: ../test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MyWorld.dir/test.c.obj"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MyWorld.dir\test.c.obj   -c F:\CLion\MyWorld\test.c
+
+CMakeFiles/MyWorld.dir/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MyWorld.dir/test.c.i"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E F:\CLion\MyWorld\test.c > CMakeFiles\MyWorld.dir\test.c.i
+
+CMakeFiles/MyWorld.dir/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MyWorld.dir/test.c.s"
+	F:\MinGW\bin\gcc.exe  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S F:\CLion\MyWorld\test.c -o CMakeFiles\MyWorld.dir\test.c.s
+
+CMakeFiles/MyWorld.dir/test.c.obj.requires:
+
+.PHONY : CMakeFiles/MyWorld.dir/test.c.obj.requires
+
+CMakeFiles/MyWorld.dir/test.c.obj.provides: CMakeFiles/MyWorld.dir/test.c.obj.requires
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/test.c.obj.provides.build
+.PHONY : CMakeFiles/MyWorld.dir/test.c.obj.provides
+
+CMakeFiles/MyWorld.dir/test.c.obj.provides.build: CMakeFiles/MyWorld.dir/test.c.obj
+
+
 # Object files for target MyWorld
 MyWorld_OBJECTS = \
 "CMakeFiles/MyWorld.dir/main.c.obj" \
+"CMakeFiles/MyWorld.dir/allocated.c.obj" \
+"CMakeFiles/MyWorld.dir/bottom.c.obj" \
 "CMakeFiles/MyWorld.dir/call.c.obj" \
-"CMakeFiles/MyWorld.dir/allocated.c.obj"
+"CMakeFiles/MyWorld.dir/test.c.obj"
 
 # External object files for target MyWorld
 MyWorld_EXTERNAL_OBJECTS =
 
 MyWorld.exe: CMakeFiles/MyWorld.dir/main.c.obj
-MyWorld.exe: CMakeFiles/MyWorld.dir/call.c.obj
 MyWorld.exe: CMakeFiles/MyWorld.dir/allocated.c.obj
+MyWorld.exe: CMakeFiles/MyWorld.dir/bottom.c.obj
+MyWorld.exe: CMakeFiles/MyWorld.dir/call.c.obj
+MyWorld.exe: CMakeFiles/MyWorld.dir/test.c.obj
 MyWorld.exe: CMakeFiles/MyWorld.dir/build.make
 MyWorld.exe: CMakeFiles/MyWorld.dir/linklibs.rsp
 MyWorld.exe: CMakeFiles/MyWorld.dir/objects1.rsp
 MyWorld.exe: CMakeFiles/MyWorld.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable MyWorld.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\CLion\MyWorld\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable MyWorld.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MyWorld.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,8 +205,10 @@ CMakeFiles/MyWorld.dir/build: MyWorld.exe
 .PHONY : CMakeFiles/MyWorld.dir/build
 
 CMakeFiles/MyWorld.dir/requires: CMakeFiles/MyWorld.dir/main.c.obj.requires
-CMakeFiles/MyWorld.dir/requires: CMakeFiles/MyWorld.dir/call.c.obj.requires
 CMakeFiles/MyWorld.dir/requires: CMakeFiles/MyWorld.dir/allocated.c.obj.requires
+CMakeFiles/MyWorld.dir/requires: CMakeFiles/MyWorld.dir/bottom.c.obj.requires
+CMakeFiles/MyWorld.dir/requires: CMakeFiles/MyWorld.dir/call.c.obj.requires
+CMakeFiles/MyWorld.dir/requires: CMakeFiles/MyWorld.dir/test.c.obj.requires
 
 .PHONY : CMakeFiles/MyWorld.dir/requires
 

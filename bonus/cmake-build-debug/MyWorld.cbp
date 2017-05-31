@@ -86,6 +86,12 @@
 		<Unit filename="F:/CLion/MyWorld/allocated.h">
 			<Option target="MyWorld"/>
 		</Unit>
+		<Unit filename="F:/CLion/MyWorld/bottom.c">
+			<Option target="MyWorld"/>
+		</Unit>
+		<Unit filename="F:/CLion/MyWorld/bottom.h">
+			<Option target="MyWorld"/>
+		</Unit>
 		<Unit filename="F:/CLion/MyWorld/call.c">
 			<Option target="MyWorld"/>
 		</Unit>
@@ -93,6 +99,15 @@
 			<Option target="MyWorld"/>
 		</Unit>
 		<Unit filename="F:/CLion/MyWorld/main.c">
+			<Option target="MyWorld"/>
+		</Unit>
+		<Unit filename="F:/CLion/MyWorld/test.c">
+			<Option target="MyWorld"/>
+		</Unit>
+		<Unit filename="F:/CLion/MyWorld/test.h">
+			<Option target="MyWorld"/>
+		</Unit>
+		<Unit filename="F:/CLion/MyWorld/type.h">
 			<Option target="MyWorld"/>
 		</Unit>
 		<Unit filename="F:/CLion/MyWorld/CMakeLists.txt">

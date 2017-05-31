@@ -4,6 +4,7 @@
 
 #include "call.h"
 #include "bottom.h"
+#include "test.h"
 #include <stdio.h>
 
 #define Fail(tips) \

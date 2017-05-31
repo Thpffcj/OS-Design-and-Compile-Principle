@@ -5,8 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "F:/CLion/MyWorld/allocated.c" "F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/MyWorld.dir/allocated.c.obj"
+  "F:/CLion/MyWorld/bottom.c" "F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/MyWorld.dir/bottom.c.obj"
   "F:/CLion/MyWorld/call.c" "F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/MyWorld.dir/call.c.obj"
   "F:/CLion/MyWorld/main.c" "F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/MyWorld.dir/main.c.obj"
+  "F:/CLion/MyWorld/test.c" "F:/CLion/MyWorld/cmake-build-debug/CMakeFiles/MyWorld.dir/test.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

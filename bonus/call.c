@@ -5,20 +5,27 @@
 #include "type.h"
 #include "bottom.h"
 #include "allocated.h"
-data_unit memory[MEMORY_SIZE];
 
 void init()
 {
+    unsigned char address[4];
+    unsigned char legnth[4];
     for(int i = 0; i<2048; i++)
     {
-        memory[MEMORY_SIZE] = 0;
+        mem_write('0', i);
     }
-    unsigned char a = 'a';
-    memory[1024] = a;
-    memory[1025] = 1024 * 1024 * 126;
+    int_to_str(2048, address, 0);
+    int_to_str(1024*1024, legnth, 0);
+    for(int i=0; i<4; i++)
+    {
+        mem_write(address[i], 1028+i);
+        mem_write(legnth[i], 1032+i);
+    }
 }
 
 //进程号为 pid 的进程希望访问 address 处的数据。如果访问合法，往 data 指针里写入数据(通过 *data = xxx)，并返回 0；如果访问不合法，返回 -1
+//if (allocate(&va, 1024, 1) != 0 || allocate(&vb, 1024, 2) != 0)
+//if (read(&d, va, 1) != 0 || read(&d, vb, 2) != 0)
 int read(data_unit *data, v_address address, m_pid_t pid)
 {
     int legal = -1;
@@ -60,7 +67,7 @@ int allocate(v_address *address, m_size_t size, m_pid_t pid)
 
 int free(v_address address, m_pid_t pid)
 {
-
+    return 1;
 }
 
 

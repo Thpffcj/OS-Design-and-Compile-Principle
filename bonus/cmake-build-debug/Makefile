@@ -149,6 +149,33 @@ allocated.c.s:
 	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/allocated.c.s
 .PHONY : allocated.c.s
 
+bottom.obj: bottom.c.obj
+
+.PHONY : bottom.obj
+
+# target to build an object file
+bottom.c.obj:
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/bottom.c.obj
+.PHONY : bottom.c.obj
+
+bottom.i: bottom.c.i
+
+.PHONY : bottom.i
+
+# target to preprocess a source file
+bottom.c.i:
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/bottom.c.i
+.PHONY : bottom.c.i
+
+bottom.s: bottom.c.s
+
+.PHONY : bottom.s
+
+# target to generate assembly for a file
+bottom.c.s:
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/bottom.c.s
+.PHONY : bottom.c.s
+
 call.obj: call.c.obj
 
 .PHONY : call.obj
@@ -203,6 +230,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/main.c.s
 .PHONY : main.c.s
 
+test.obj: test.c.obj
+
+.PHONY : test.obj
+
+# target to build an object file
+test.c.obj:
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/test.c.obj
+.PHONY : test.c.obj
+
+test.i: test.c.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.c.i:
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/test.c.i
+.PHONY : test.c.i
+
+test.s: test.c.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.c.s:
+	$(MAKE) -f CMakeFiles\MyWorld.dir\build.make CMakeFiles/MyWorld.dir/test.c.s
+.PHONY : test.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -215,12 +269,18 @@ help:
 	@echo ... allocated.obj
 	@echo ... allocated.i
 	@echo ... allocated.s
+	@echo ... bottom.obj
+	@echo ... bottom.i
+	@echo ... bottom.s
 	@echo ... call.obj
 	@echo ... call.i
 	@echo ... call.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... test.obj
+	@echo ... test.i
+	@echo ... test.s
 .PHONY : help
 
 

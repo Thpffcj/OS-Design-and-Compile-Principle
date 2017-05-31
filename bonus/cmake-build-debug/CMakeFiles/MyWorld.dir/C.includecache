@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 F:/CLion/MyWorld/allocated.c
+stdio.h
+-
 allocated.h
 F:/CLion/MyWorld/allocated.h
 type.h
@@ -15,6 +17,14 @@ bottom.h
 F:/CLion/MyWorld/bottom.h
 
 F:/CLion/MyWorld/allocated.h
+
+F:/CLion/MyWorld/bottom.c
+stdlib.h
+-
+stdio.h
+-
+bottom.h
+F:/CLion/MyWorld/bottom.h
 
 F:/CLion/MyWorld/bottom.h
 type.h
@@ -28,9 +38,29 @@ F:/CLion/MyWorld/bottom.h
 allocated.h
 F:/CLion/MyWorld/allocated.h
 
+F:/CLion/MyWorld/call.h
+type.h
+F:/CLion/MyWorld/type.h
+
 F:/CLion/MyWorld/main.c
 stdio.h
 -
+allocated.h
+F:/CLion/MyWorld/allocated.h
+test.h
+F:/CLion/MyWorld/test.h
+
+F:/CLion/MyWorld/test.c
+call.h
+F:/CLion/MyWorld/call.h
+bottom.h
+F:/CLion/MyWorld/bottom.h
+test.h
+F:/CLion/MyWorld/test.h
+stdio.h
+-
+
+F:/CLion/MyWorld/test.h
 
 F:/CLion/MyWorld/type.h
 
