@@ -7,4 +7,6 @@
 
 int test1();
 
+int test2();
+
 #endif //MYWORLD_TEST_H

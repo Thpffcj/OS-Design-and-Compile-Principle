@@ -8,18 +8,18 @@
 
 void init()
 {
-    unsigned char address[4];
-    unsigned char legnth[4];
-    for(int i = 0; i<2048; i++)
+    unsigned char address[5];
+    unsigned char legnth[5];
+    for(int i = 0; i<1024*24; i++)
     {
         mem_write('0', i);
     }
-    int_to_str(2048, address, 0);
-    int_to_str(1024*1024, legnth, 0);
-    for(int i=0; i<4; i++)
+    int_to_str(1024*30, address, 0);
+    int_to_str(1024*131042, legnth, 0);
+    for(int i=0; i<5; i++)
     {
-        mem_write(address[i], 1028+i);
-        mem_write(legnth[i], 1032+i);
+        mem_write(address[i], 1024*15+i);
+        mem_write(legnth[i], 1024*15+5+i);
     }
 }
 
@@ -65,9 +65,17 @@ int allocate(v_address *address, m_size_t size, m_pid_t pid)
     return 0;
 }
 
+//进程号为 pid 的进程希望归还 address 处开始的空间。如果访问合法，回收空间，返回 0；如果访问不合法(address 处的空间不属于 pid 进程)，返回 -1
 int free(v_address address, m_pid_t pid)
 {
-    return 1;
+    int legal = -1;
+    legal = is_legal(pid, address);
+    if(legal == -1)
+    {
+        return -1;
+    }
+    restoration(address, pid, legal);
+    return 0;
 }
 
 

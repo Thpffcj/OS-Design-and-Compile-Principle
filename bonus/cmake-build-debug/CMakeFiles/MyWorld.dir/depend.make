@@ -18,6 +18,7 @@ CMakeFiles/MyWorld.dir/call.c.obj: ../type.h
 CMakeFiles/MyWorld.dir/main.c.obj: ../allocated.h
 CMakeFiles/MyWorld.dir/main.c.obj: ../main.c
 CMakeFiles/MyWorld.dir/main.c.obj: ../test.h
+CMakeFiles/MyWorld.dir/main.c.obj: ../type.h
 
 CMakeFiles/MyWorld.dir/test.c.obj: ../bottom.h
 CMakeFiles/MyWorld.dir/test.c.obj: ../call.h
