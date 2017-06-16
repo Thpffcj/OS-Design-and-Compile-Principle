@@ -1,0 +1,279 @@
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            main.c
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                    Forrest Yu, 2005
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+#include "type.h"
+#include "const.h"
+#include "protect.h"
+#include "proto.h"
+#include "string.h"
+#include "proc.h"
+#include "global.h"
+
+
+/*======================================================================*
+                            kernel_main
+ *======================================================================*/
+PUBLIC int kernel_main()
+{
+	disp_str("-----\"kernel_main\" begins-----\n");
+	//************************************clear the screen
+	int my_i=0;
+	disp_pos=0;
+	for(;my_i<80*25;my_i++){
+		disp_str(" ");
+	}
+	disp_pos=0;
+	//*************************************
+	//for(my_i=0;my_i<BUFFERSIZE;my_i++){
+	//	products[my_i]=0;
+	//}
+	//*************************************init the semaphores
+	//p_mutex=&mutex;
+	//p_sget=&sget;
+	//p_sput=&sput;
+
+        p_mutex=&mutex;
+        p_numGet = &numGet;
+	p_barbers=&barbers;
+	p_customers=&customers;
+
+	//init_semaphore(p_mutex);
+	//init_semaphore(p_sget);
+	//init_semaphore(p_sput);
+
+        init_semaphore(p_numGet);
+        init_semaphore(p_mutex);
+	init_semaphore(p_barbers);
+	init_semaphore(p_customers);
+
+	//p_sget->count=0;
+	//p_sput->count=BUFFERSIZE;
+
+        p_barbers->count=0;
+	p_customers->count=0;
+        number = 1;
+        CHARS = 1;
+        waiting = 0;
+	//*************************************
+
+	
+	TASK*		p_task		= task_table;
+	PROCESS*	p_proc		= proc_table; //将进程表地址给p_proc
+	char*		p_task_stack	= task_stack + STACK_SIZE_TOTAL;
+	u16		selector_ldt	= SELECTOR_LDT_FIRST;
+	int i;
+	for (i = 0; i < NR_TASKS; i++) {
+		strcpy(p_proc->p_name, p_task->name);	// name of the process
+		p_proc->pid = i;			// pid
+
+		p_proc->ldt_sel = selector_ldt;
+		p_proc->sleep_milis=0;
+		p_proc->is_ready=1;
+		p_proc->p_table_index=i;
+		memcpy(&p_proc->ldts[0], &gdt[SELECTOR_KERNEL_CS >> 3],
+		       sizeof(DESCRIPTOR));
+		p_proc->ldts[0].attr1 = DA_C | PRIVILEGE_TASK << 5;
+		memcpy(&p_proc->ldts[1], &gdt[SELECTOR_KERNEL_DS >> 3],
+		       sizeof(DESCRIPTOR));
+		p_proc->ldts[1].attr1 = DA_DRW | PRIVILEGE_TASK << 5;
+		p_proc->regs.cs	= ((8 * 0) & SA_RPL_MASK & SA_TI_MASK)
+			| SA_TIL | RPL_TASK;
+		p_proc->regs.ds	= ((8 * 1) & SA_RPL_MASK & SA_TI_MASK)
+			| SA_TIL | RPL_TASK;
+		p_proc->regs.es	= ((8 * 1) & SA_RPL_MASK & SA_TI_MASK)
+			| SA_TIL | RPL_TASK;
+		p_proc->regs.fs	= ((8 * 1) & SA_RPL_MASK & SA_TI_MASK)
+			| SA_TIL | RPL_TASK;
+		p_proc->regs.ss	= ((8 * 1) & SA_RPL_MASK & SA_TI_MASK)
+			| SA_TIL | RPL_TASK;
+		p_proc->regs.gs	= (SELECTOR_KERNEL_GS & SA_RPL_MASK)
+			| RPL_TASK;
+
+		p_proc->regs.eip = (u32)p_task->initial_eip;
+		p_proc->regs.esp = (u32)p_task_stack;
+		p_proc->regs.eflags = 0x1202; /* IF=1, IOPL=1 */
+
+		p_task_stack -= p_task->stacksize;
+		p_proc++;
+		p_task++;
+		selector_ldt += 1 << 3;
+	}
+
+	proc_table[0].ticks = proc_table[0].priority = 15;
+	proc_table[1].ticks = proc_table[1].priority =  15;
+	proc_table[2].ticks = proc_table[2].priority =  15;
+	proc_table[3].ticks=proc_table[3].priority=15;
+
+	k_reenter = 0;
+	ticks = 0;
+
+	p_proc_ready	= proc_table;
+
+        /* 初始化 8253 PIT */
+        out_byte(TIMER_MODE, RATE_GENERATOR);
+        out_byte(TIMER0, (u8) (TIMER_FREQ/HZ) );
+        out_byte(TIMER0, (u8) ((TIMER_FREQ/HZ) >> 8));
+
+        put_irq_handler(CLOCK_IRQ, clock_handler); /* 设定时钟中断处理程序 */
+        enable_irq(CLOCK_IRQ);                     /* 让8259A可以接收时钟中断 */
+
+	restart();
+
+	while(1){}
+}
+
+void disp_queue(queue* q){
+	int i=0;
+	int* nums=q->vals;
+	for(;i<QUEUE_SIZE;i++)
+	{
+		disp_int(nums[i]);
+	}
+}
+
+void TestA()
+{
+	int i = 0;
+	while (1) {
+		my_disp_str("A\n");
+		milli_delay(20000);
+	}
+}
+
+/*======================================================================*
+                               TestB	barber
+ *======================================================================*/
+void TestB()
+{
+	int i = 1;
+	while(1){
+		sleep(500);
+        sem_p(p_customers);
+        sem_p(p_mutex);
+        waiting --;
+        my_disp_str("Barbers del waiting num to: ");
+        disp_int(waiting);
+        my_disp_str("\n");
+        milli_delay(2000);
+        my_disp_str("B cut the hair\n");               
+        sem_v(p_barbers);
+        sem_v(p_mutex);
+        delay(1);
+	}
+}
+
+/*======================================================================*
+                               TestC customer1
+ *======================================================================*/
+void TestC()
+{
+	int i = 0x2000;
+	while(1){
+		sleep(2000);
+                int numberB = 0;
+                sem_p(p_numGet);
+                numberB = number;
+                number ++;
+                sem_v(p_numGet);
+		sem_p(p_mutex);
+                if(waiting < CHARS){
+                    waiting++;
+                    my_disp_str("C:customer ");
+                    disp_int(numberB);
+                    my_disp_str(" come , add waiting num to: ");
+                    disp_int(waiting);
+                    my_disp_str("\n");
+                    sem_v(p_customers);
+                    sem_v(p_mutex);
+                    sem_p(p_barbers);
+                    my_disp_str("C:customer ");
+                    disp_int(numberB);
+                    my_disp_str(" get hair cut , leave! \n");
+                }
+                else{
+                    my_disp_str("C:customer ");
+                    disp_int(numberB);
+                    my_disp_str(" come , leave without hair cut!\n");
+                    sem_v(p_mutex);
+                }
+                //delay(1);
+	}
+}
+/*======================================================================*
+                               TestD customer2
+ *======================================================================*/
+void TestD()
+{
+	int i = 0x2000;
+	while(1){
+		sleep(2000);
+                int numberB = 0;
+                sem_p(p_numGet);
+                numberB = number;
+                number ++;
+                sem_v(p_numGet);
+                sem_p(p_mutex);
+                if(waiting < CHARS){
+                    waiting++;
+                    my_disp_str("D:customer ");
+                    disp_int(numberB);
+                    my_disp_str(" come , add waiting num to: ");
+                    disp_int(waiting);
+                    my_disp_str("\n");
+                    sem_v(p_customers);
+                    sem_v(p_mutex);
+                    sem_p(p_barbers);
+                    my_disp_str("D:customer ");
+                    disp_int(numberB);
+                    my_disp_str(" get hair cut , leave! \n");
+                }
+                else{
+                    my_disp_str("D:customer ");
+                    disp_int(numberB);
+                    my_disp_str(" come , leave without hair cut!\n");
+                    sem_v(p_mutex);
+                }
+                //delay(1);
+	}
+}
+/*======================================================================*
+                               TestE customer3
+ *======================================================================*/
+void TestE()
+{
+	int i = 0x2000;
+	while(1){
+		sleep(2000);
+        int numberB = 0;
+        sem_p(p_numGet);
+        numberB = number;
+        number ++;
+        sem_v(p_numGet);
+        sem_p(p_mutex);
+        if(waiting < CHARS){
+            waiting++;
+            my_disp_str("E:customer ");
+            disp_int(numberB);
+            my_disp_str(" come , add waiting num to: ");
+            disp_int(waiting);
+            my_disp_str("\n");
+            sem_v(p_customers);
+            sem_v(p_mutex);
+            sem_p(p_barbers);
+            my_disp_str("E:customer ");
+            disp_int(numberB);
+            my_disp_str(" get hair cut , leave! \n");
+        }
+        else{
+            my_disp_str("E:customer ");
+            disp_int(numberB);
+            my_disp_str(" come , leave without hair cut!\n");
+            sem_v(p_mutex);
+        }
+                //delay(1);
+	}
+}

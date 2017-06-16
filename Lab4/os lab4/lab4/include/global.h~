@@ -1,0 +1,53 @@
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            global.h
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                    Forrest Yu, 2005
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* EXTERN is defined as extern except in global.c */
+#ifdef	GLOBAL_VARIABLES_HERE
+#undef	EXTERN
+#define	EXTERN
+#endif
+
+EXTERN	int		ticks;
+
+EXTERN	int		disp_pos;
+EXTERN	u8		gdt_ptr[6];	// 0~15:Limit  16~47:Base
+EXTERN	DESCRIPTOR	gdt[GDT_SIZE];
+EXTERN	u8		idt_ptr[6];	// 0~15:Limit  16~47:Base
+EXTERN	GATE		idt[IDT_SIZE];
+
+EXTERN	u32		k_reenter;
+
+EXTERN	TSS		tss;
+EXTERN	PROCESS*	p_proc_ready;
+EXTERN	PROCESS*	p_proc_now;
+
+extern	PROCESS		proc_table[];
+extern	char		task_stack[];
+extern  TASK            task_table[];
+extern	irq_handler	irq_table[];
+
+//EXTERN semaphore mutex;
+//EXTERN semaphore *p_mutex;
+//EXTERN semaphore sput;
+//EXTERN semaphore *p_sput;
+//EXTERN semaphore sget;
+//EXTERN semaphore *p_sget;
+//EXTERN int products[5];
+//EXTERN int put_ptr;
+//EXTERN int get_ptr;
+
+EXTERN semaphore numGet;
+EXTERN semaphore *p_number;
+EXTERN semaphore mutex;
+EXTERN semaphore *p_mutex;
+EXTERN semaphore barbers;
+EXTERN semaphore *p_barbers;
+EXTERN semaphore customers;
+EXTERN semaphore *p_customers;
+EXTERN int CHARS;
+EXTERN int waiting;
+EXTERN int number;
