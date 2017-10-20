@@ -1,5 +1,6 @@
 package analyzer;
 
+import analyzer.NFA.NFA;
 import io.FileHandler;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Analyzer {
     private int previousLineNum;
     private List<Token> tokens;
     private int pointer;
+    private NFA nfa;
 
     public Analyzer() {
         FileHandler fileHandler = FileHandler.getInstance();
@@ -24,7 +26,10 @@ public class Analyzer {
 
     public void parse() {
 
+        // 扫描字符串
         while (pointer < source.length()) {
+            // 将当前指针和字符串传给NFA获取一个词法单元
+            Token nextToken = nfa.getToken(pointer, source);
 
         }
     }
