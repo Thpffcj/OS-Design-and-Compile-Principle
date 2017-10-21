@@ -1,9 +1,10 @@
 package analyzer.NFA;
 
-import analyzer.NFA.state.State;
+import analyzer.NFA.state.*;
 import analyzer.Table;
 import analyzer.Token;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,21 @@ public class NFA {
         this.constantTable = constantTable;
         this.varTable = varTable;
         init();
+    }
+
+    private void init(){
+        pointer = -1;
+        state = -1;
+        //将所有状态加入有限状态序列中
+        states = new ArrayList<>();
+        states.add(new State0());
+        states.add(new State1());
+        states.add(new State2());
+        states.add(new State3());
+        states.add(new State4());
+        states.add(new State5());
+        states.add(new State6());
+        states.add(new State7());
     }
 
     /**
@@ -46,13 +62,32 @@ public class NFA {
             state = nextState(nextChar, state, lexeme.toString());
             // 不能识别nextChar
             if (-1 == state) {
-
+                // 上一状态为接受状态
+                if (states.get(lastState).isEnd()) {
+                    Token.TokenType type = states.get(lastState).getTokenType();
+                    // 是ID,查变量表
+                    if (Token.TokenType.ID == type) {
+                        int posInVarTable = varTable.add(lexeme.toString());
+                        token = new Token(type, posInVarTable);
+                    } else if (Token.TokenType.CONSTANT == type) {
+                        // 是数值常量,查常量表
+                        double value = Double.parseDouble(lexeme.toString());
+                        int posInConsTable = constantTable.add(value);
+                        token = new Token(type, posInConsTable);
+                    } else {
+                        // 是符号,直接返回词法单元
+                        token = new Token(type);
+                    }
+                } else {
+                    token = null;
+                }
+                break;
             }
             lexeme.append(nextChar);
             pointer ++;
         } while (true);
 
-//        return token;
+        return token;
     }
 
     /**
@@ -70,9 +105,4 @@ public class NFA {
         return pointer;
     }
 
-    private void init() {
-        pointer = -1;
-        state = -1;
-
-    }
 }

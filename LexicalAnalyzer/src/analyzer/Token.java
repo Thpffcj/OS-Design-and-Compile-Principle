@@ -5,6 +5,19 @@ package analyzer;
  */
 public class Token {
 
+    private TokenType tokenType;
+    private int pointerToTable;
+
+    public Token(TokenType tokenType) {
+        this.tokenType = tokenType;
+        pointerToTable = -1;
+    }
+
+    public Token(TokenType tokenType, int pointerToTable) {
+        this.tokenType = tokenType;
+        pointerToTable = pointerToTable;
+    }
+
     public enum TokenType{
         ID("ID"),
         CONSTANT("CONSTANT"),
@@ -23,5 +36,15 @@ public class Token {
         TokenType(String value){
             this.value = value;
         }
+    }
+
+    public String toString() {
+        String out;
+        if (-1 != pointerToTable) {
+            out = "<" + tokenType.name() + "," + pointerToTable + ">";
+        } else {
+            out = "<" + tokenType.name() + ">";
+        }
+        return out;
     }
 }

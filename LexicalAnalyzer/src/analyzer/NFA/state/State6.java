@@ -3,11 +3,11 @@ package analyzer.NFA.state;
 import analyzer.Token;
 
 /**
- * Created by Thpffcj on 2017/10/20.
+ * Created by Thpffcj on 2017/10/21.
  */
-public class State5 implements State {
+public class State6 implements State {
 
-    public static int STATE_INDEX = 5;
+    public static int STATE_INDEX = 6;
 
     @Override
     public int nextState(char c, String lexeme) {
