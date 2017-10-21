@@ -27,6 +27,6 @@ public class State2 implements State {
 
     @Override
     public Token.TokenType getTokenType() {
-        return null;
+        return Token.TokenType.CONSTANT;
     }
 }

@@ -40,6 +40,7 @@ public class State4 implements State {
 
     @Override
     public Token.TokenType getTokenType() {
-        return null;
+        Token.TokenType type = symbols.get(lexeme);
+        return type;
     }
 }
