@@ -45,6 +45,7 @@ public class FileHandler {
                     temp = temp + "\n";
                     sourceCode.append(temp);
                 }
+//                System.out.println("sourceCode " + sourceCode);
                 sourceReader.close();
                 return sourceCode;
             }
@@ -55,8 +56,8 @@ public class FileHandler {
     }
 
     public void outputToken(List<Token> tokens) {
-        String path = getSourceParentPath();
-        path += TOKEN_FILE_NAME;
+//        String path = getSourceParentPath();
+        String path = TOKEN_FILE_NAME;
         File tokenFile = openOutputFile(path);
         StringBuilder tokenContent = new StringBuilder();
         for (Token token : tokens) {
@@ -67,15 +68,15 @@ public class FileHandler {
     }
 
     public void outputTable(Table table, String fileName) {
-        String path = getSourceParentPath();
-        path += fileName;
+//        String path = getSourceParentPath();
+        String path = fileName;
         File varTableFile = openOutputFile(path);
         writeFile(varTableFile, table.toString());
     }
 
     public void outputError(int lineNum) {
-        String path = getSourceParentPath();
-        path += TOKEN_FILE_NAME;
+//        String path = getSourceParentPath();
+        String path =  TOKEN_FILE_NAME;
         File tokenFile = openOutputFile(path);
         String errorInfo = ERROR_LOG + lineNum;
         writeFile(tokenFile, errorInfo);

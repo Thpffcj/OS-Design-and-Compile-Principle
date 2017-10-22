@@ -15,7 +15,7 @@ public class Token {
 
     public Token(TokenType tokenType, int pointerToTable) {
         this.tokenType = tokenType;
-        pointerToTable = pointerToTable;
+        this.pointerToTable = pointerToTable;
     }
 
     public enum TokenType{

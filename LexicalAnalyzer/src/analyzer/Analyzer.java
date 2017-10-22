@@ -28,11 +28,12 @@ public class Analyzer {
         source = scanner.scan();
         previousLineNum = 1;
         tokens = new ArrayList<>();
-        nfa = new NFA(varTable,constantTable);
+        nfa = new NFA(varTable, constantTable);
     }
 
     public void parse() {
 
+//        System.out.println("parse " + source);
         // 扫描字符串
         while (pointer < source.length()) {
             // 将当前指针和字符串传给NFA获取一个词法单元

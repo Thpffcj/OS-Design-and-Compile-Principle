@@ -22,7 +22,7 @@ public class State2 implements State {
 
     @Override
     public boolean isEnd() {
-        return false;
+        return true;
     }
 
     @Override

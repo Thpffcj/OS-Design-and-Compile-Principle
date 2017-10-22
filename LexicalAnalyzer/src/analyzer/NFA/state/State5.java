@@ -33,7 +33,7 @@ public class State5 implements State {
 
     @Override
     public boolean isEnd() {
-        return false;
+        return true;
     }
 
     @Override
