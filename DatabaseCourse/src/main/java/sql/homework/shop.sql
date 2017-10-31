@@ -82,7 +82,7 @@ DELETE FROM `customer`
 WHERE cuid NOT IN (
   SELECT cuid FROM `order`
   WHERE DATE_FORMAT(ordertime, '%Y-%m-%d') < '2015-09-01' AND
-    ordertime >= DATE_SUB(DATE_FORMAT('2015-09-01', INTERVAL 1 YEAR))
+    ordertime >= DATE_SUB(DATE_FORMAT('2015-09-01', '%Y-%m-%d'), INTERVAL 1 YEAR)
 );
 
 # 10. 授予销售经理的账号 Mike 对表 customer 的更新、插入和查询权限，但不给删除权限。

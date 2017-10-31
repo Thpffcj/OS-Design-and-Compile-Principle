@@ -1,11 +1,9 @@
-package logisticsManagement;
+package logisticsManagement.dao;
 
 /**
  * Created by Thpffcj on 2017/10/31.
  */
-public class LogisticsDao {
+public interface LogisticsDao {
 
-    public void createTable() {
-
-    }
+    public void createTable();
 }
