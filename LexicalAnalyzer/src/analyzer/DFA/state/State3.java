@@ -1,13 +1,13 @@
-package analyzer.NFA.state;
+package analyzer.DFA.state;
 
 import analyzer.Token;
 
 /**
  * Created by Thpffcj on 2017/10/21.
  */
-public class State7 implements State {
+public class State3 implements State {
 
-    public static int STATE_INDEX = 7;
+    public static int STATE_INDEX = 3;
 
     @Override
     public int nextState(char c, String lexeme) {
@@ -20,7 +20,7 @@ public class State7 implements State {
 
     @Override
     public boolean isEnd() {
-        return true;
+        return false;
     }
 
     @Override

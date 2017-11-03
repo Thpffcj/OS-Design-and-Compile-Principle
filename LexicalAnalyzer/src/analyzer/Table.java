@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Table {
 
-    public static String CONSTANT_TABLE = "CONSTRANT";
+    public static String CONSTANT_TABLE = "CONSTANT";
     public static String VARIABLE_TABLE = "VARIABLE";
     private List<Object> items;
     private String tableType;

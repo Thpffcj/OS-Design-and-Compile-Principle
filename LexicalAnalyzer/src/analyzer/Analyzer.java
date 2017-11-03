@@ -1,6 +1,6 @@
 package analyzer;
 
-import analyzer.NFA.NFA;
+import analyzer.DFA.DFA;
 import io.FileHandler;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class Analyzer {
     private Scanner scanner;
     private List<Token> tokens;
     private int pointer;
-    private NFA nfa;
+    private DFA dfa;
 
     public Analyzer() {
         FileHandler fileHandler = FileHandler.getInstance();
@@ -28,7 +28,7 @@ public class Analyzer {
         source = scanner.scan();
         previousLineNum = 1;
         tokens = new ArrayList<>();
-        nfa = new NFA(varTable, constantTable);
+        dfa = new DFA(varTable, constantTable);
     }
 
     public void parse() {
@@ -37,12 +37,12 @@ public class Analyzer {
         // 扫描字符串
         while (pointer < source.length()) {
             // 将当前指针和字符串传给NFA获取一个词法单元
-            Token nextToken = nfa.getToken(pointer, source);
+            Token nextToken = dfa.getToken(pointer, source);
             // 获取到一个合法的词法单元
             if (null != nextToken) {
                 tokens.add(nextToken);
                 // 更新当前指针位置
-                pointer = nfa.getPointer();
+                pointer = dfa.getPointer();
                 // 查看当前字符
                 char nextStartChar = source.charAt(pointer);
                 if (scanner.isBlankChar(nextStartChar)) {

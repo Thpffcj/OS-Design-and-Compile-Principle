@@ -1,4 +1,4 @@
-package analyzer.NFA.state;
+package analyzer.DFA.state;
 
 import analyzer.Token;
 
