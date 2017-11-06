@@ -1,6 +1,8 @@
 package logisticsManagement.dao;
 
+import java.sql.ResultSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Thpffcj on 2017/10/31.
@@ -11,7 +13,7 @@ public interface LogisticsDao {
 
     public void insertData();
 
-    public List<String> getDormitory(String name);
+    public Set<String> getDormitory(String name);
 
     public void updateCharge(String dormitoryName, double charge);
 

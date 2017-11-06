@@ -31,7 +31,7 @@ public class LogisticsDaoImpl implements LogisticsDao {
         ResultSet resultSet = null;
 
         String studentSql = "CREATE TABLE `student` (\n" +
-                "  `sid` VARCHAR(30) NOT NULL AUTO_INCREMENT,\n" +
+                "  `sid` VARCHAR(30) NOT NULL,\n" +
                 "  `name` VARCHAR(50) NOT NULL,\n" +
                 "  `faculty` VARCHAR(50) NOT NULL,\n" +
                 "  `dormitory_name` VARCHAR(50) NOT NULL,\n" +
@@ -66,6 +66,8 @@ public class LogisticsDaoImpl implements LogisticsDao {
      */
     public void insertData() {
 
+        long startTime = System.currentTimeMillis();
+
         Sheet sheet;
         Workbook book;
         Cell faculty, sid, name, gender, campus, dormitoryName, charge;
@@ -75,7 +77,8 @@ public class LogisticsDaoImpl implements LogisticsDao {
         infos = getPhoneByDormitory();
 
         Connection connection = null;
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
         ResultSet resultSet = null;
         String insertStudent = "insert into student(sid, name, faculty, dormitory_name, gender) values(?,?,?,?,?)";
         String insertDormitory = "insert into dormitory(dormitory_name, campus, charge, phone) values(?,?,?,?)";
@@ -88,6 +91,10 @@ public class LogisticsDaoImpl implements LogisticsDao {
             sheet = book.getSheet(0);
 
             connection = JDBCUtil.getConnection();
+            connection.setAutoCommit(false);
+
+            preparedStatement1 = connection.prepareStatement(insertStudent);
+            preparedStatement2 = connection.prepareStatement(insertDormitory);
 
             int rows = sheet.getRows();
             for (int row = 1; row < rows; row ++) {
@@ -100,34 +107,35 @@ public class LogisticsDaoImpl implements LogisticsDao {
                 dormitoryName = sheet.getCell(5,row);
                 charge = sheet.getCell(6,row);
 
-                preparedStatement = connection.prepareStatement(insertStudent);
-                preparedStatement.setString(1, sid.getContents());
-                preparedStatement.setString(2, name.getContents());
-                preparedStatement.setString(3, faculty.getContents());
-                preparedStatement.setString(4, dormitoryName.getContents());
-                preparedStatement.setString(5, gender.getContents());
-                preparedStatement.execute();
+                preparedStatement1.setString(1, sid.getContents());
+                preparedStatement1.setString(2, name.getContents());
+                preparedStatement1.setString(3, faculty.getContents());
+                preparedStatement1.setString(4, dormitoryName.getContents());
+                preparedStatement1.setString(5, gender.getContents());
+                preparedStatement1.addBatch();
 
-
-//                if (!dormitorys.contains(dormitoryName.getContents())) {
-//                    dormitorys.add(dormitoryName.getContents());
-//                    preparedStatement = connection.prepareStatement(insertDormitory);
-//                    preparedStatement.setString(1, dormitoryName.getContents());
-//                    preparedStatement.setString(2, campus.getContents());
-//                    preparedStatement.setDouble(3, Double.valueOf(charge.getContents()));
-//                    System.out.println(dormitoryName.getContents() + " " + infos.get(dormitoryName.getContents()));
-//                    preparedStatement.setString(4, infos.get(dormitoryName.getContents()));
-//                    preparedStatement.execute();
-//                }
+                if (!dormitorys.contains(dormitoryName.getContents())) {
+                    dormitorys.add(dormitoryName.getContents());
+                    preparedStatement2.setString(1, dormitoryName.getContents());
+                    preparedStatement2.setString(2, campus.getContents());
+                    preparedStatement2.setDouble(3, Double.valueOf(charge.getContents()));
+                    preparedStatement2.setString(4, infos.get(dormitoryName.getContents()));
+                    preparedStatement2.addBatch();
+                }
             }
+            preparedStatement1.executeBatch();
+            preparedStatement2.executeBatch();
+            connection.commit();
             book.close();
         }
         catch(Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtil.release(resultSet,preparedStatement,connection);
+            JDBCUtil.release(resultSet,preparedStatement1,connection);
+            JDBCUtil.release(resultSet,preparedStatement2,connection);
+            long endTime = System.currentTimeMillis();
+            System.out.println("插入所有数据共用时间： " + (endTime - startTime) / 1000.0 + "s");
         }
-
 
     }
 
@@ -155,7 +163,9 @@ public class LogisticsDaoImpl implements LogisticsDao {
      * @param name
      * @return
      */
-    public List<String> getDormitory(String name) {
+    public Set<String> getDormitory(String name) {
+
+        long startTime = System.currentTimeMillis();
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -163,35 +173,42 @@ public class LogisticsDaoImpl implements LogisticsDao {
 
         String sql = "SELECT faculty FROM `student` s\n" +
                 "WHERE s.dormitory_name IN (\n" +
-                "  SELECT s1.dormitory_name FROM `dormitory` s1\n" +
+                "  SELECT s1.dormitory_name FROM `student` s1\n" +
                 "  WHERE s1.name = '王小星');";
 
-        List<String> facultys = new ArrayList<String>();
+        Set<String> facultys = new HashSet<String>();
 
         try {
             connection = JDBCUtil.getConnection();
             preparedStatement = connection.prepareStatement(sql);
-            facultys = (List<String>) preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                facultys.add(resultSet.getString(1));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             JDBCUtil.release(resultSet,preparedStatement,connection);
+            long endTime = System.currentTimeMillis();
+            System.out.println("查询王小星同学所在宿舍楼的所有院系： " + (endTime - startTime) / 1000.0 + "s");
         }
         return facultys;
     }
 
     /**
-     * 因宿舍装修，陶园一舍的住宿费用提高至 1200 元，在已建数据库的基础上，给出数据库的修改代码
+     * 因宿舍装修，陶园1舍的住宿费用提高至 1200 元，在已建数据库的基础上，给出数据库的修改代码
      * @param dormitoryName
      * @param charge
      */
     public void updateCharge(String dormitoryName, double charge) {
 
+        long startTime = System.currentTimeMillis();
+
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        String sql = "UPDATE `dormitory` SET charge = 1200 WHERE dormitory_name = '陶园一舍';";
+        String sql = "UPDATE `dormitory` SET charge = 1200 WHERE dormitory_name = '陶园1舍';";
 
         try {
             connection = JDBCUtil.getConnection();
@@ -201,6 +218,8 @@ public class LogisticsDaoImpl implements LogisticsDao {
             e.printStackTrace();
         } finally {
             JDBCUtil.release(resultSet, preparedStatement, connection);
+            long endTime = System.currentTimeMillis();
+            System.out.println("陶园1舍的住宿费用提高至 1200 元： " + (endTime - startTime) / 1000.0 + "s");
         }
     }
 
@@ -210,24 +229,51 @@ public class LogisticsDaoImpl implements LogisticsDao {
      */
     public void swapDormitory() {
 
+        long startTime = System.currentTimeMillis();
+
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
         String sql1 = "SELECT dormitory_name FROM `student`\n" +
                 "WHERE faculty = '软件学院' AND gender = '男';";
+        String sql2 = "SELECT dormitory_name FROM `student`\n" +
+                "WHERE faculty = '软件学院' AND gender = '女';";
+        String sql3 = "UPDATE `student` SET dormitory_name = ? \n" +
+                "WHERE faculty = '软件学院' AND gender = '男';";
+        String sql4 = "UPDATE `student` SET dormitory_name = ? \n" +
+                "WHERE faculty = '软件学院' AND gender = '女';";
 
         try {
             connection = JDBCUtil.getConnection();
             preparedStatement = connection.prepareStatement(sql1);
             resultSet = preparedStatement.executeQuery();
+            String men = null;
+            while (resultSet.next()) {
+                men = resultSet.getString(1);
+            }
+
+            preparedStatement = connection.prepareStatement(sql2);
+            resultSet = preparedStatement.executeQuery();
+            String women = null;
+            while (resultSet.next()) {
+                women = resultSet.getString(1);
+            }
+
+            preparedStatement = connection.prepareStatement(sql3);
+            preparedStatement.setString(1, women);
+            int changeMen = preparedStatement.executeUpdate();
+
+            preparedStatement = connection.prepareStatement(sql4);
+            preparedStatement.setString(1, men);
+            int changeWomen = preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             JDBCUtil.release(resultSet, preparedStatement, connection);
+            long endTime = System.currentTimeMillis();
+            System.out.println("软件学院男女研究生互换宿舍楼： " + (endTime - startTime) / 1000.0 + "s");
         }
-
     }
-
 
 }
