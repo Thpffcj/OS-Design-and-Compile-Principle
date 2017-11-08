@@ -1,4 +1,4 @@
-package lexicalAnalyser.analyzer.NFA;
+package lexicalAnalyser.analyzer.DFA;
 
 import syntaxAnalyzer.analyzer.SymbolType;
 

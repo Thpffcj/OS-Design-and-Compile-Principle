@@ -1,4 +1,4 @@
-package lexicalAnalyser.analyzer.NFA.state;
+package lexicalAnalyser.analyzer.DFA.state;
 
 
 import lexicalAnalyser.analyzer.Token;

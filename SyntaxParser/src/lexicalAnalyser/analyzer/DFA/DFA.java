@@ -1,6 +1,6 @@
-package lexicalAnalyser.analyzer.NFA;
+package lexicalAnalyser.analyzer.DFA;
 
-import lexicalAnalyser.analyzer.NFA.state.*;
+import lexicalAnalyser.analyzer.DFA.state.*;
 import lexicalAnalyser.analyzer.Table;
 import lexicalAnalyser.analyzer.Token;
 
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Thpffcj on 2017/10/19.
  */
-public class NFA {
+public class DFA {
 
     private Table varTable;
     private Table constantTable;
@@ -18,7 +18,7 @@ public class NFA {
     private int pointer;
     private int state;
 
-    public NFA(Table varTable,Table constantTable) {
+    public DFA(Table varTable, Table constantTable) {
         this.constantTable = constantTable;
         this.varTable = varTable;
         init();
