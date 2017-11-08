@@ -12,6 +12,9 @@ public class Main {
         BikeSharingDao bikeSharingDao = new BikeSharingDaoImpl();
 //        bikeSharingDao.createTable();
 //        bikeSharingDao.insertRecordData();
-        bikeSharingDao.insertOthersData();
+//        bikeSharingDao.insertOthersData();
+//        bikeSharingDao.insertAddress();
+//        bikeSharingDao.insertMoney();
+        bikeSharingDao.findMaintain();
     }
 }

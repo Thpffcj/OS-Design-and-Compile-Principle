@@ -2,44 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77a63687-17b1-46c1-aa9e-3812b58438b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/TerminalType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Grammar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/NonTerminal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Production.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Symbol.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/syntax/PPT.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/TerminalType.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/logisticsManagement/dao/LogisticsDao.class" afterPath="$PROJECT_DIR$/target/classes/logisticsManagement/dao/LogisticsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/logisticsManagement/dao/impl/LogisticsDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/logisticsManagement/dao/impl/LogisticsDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/logisticsManagement/main/Main.class" afterPath="$PROJECT_DIR$/target/classes/logisticsManagement/main/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/BikeSharingDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/BikeSharingDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql" afterPath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/LogisticsDao.java" afterPath="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/LogisticsDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/impl/LogisticsDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/impl/LogisticsDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/impl/sql.sql" afterPath="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/impl/sql.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logisticsManagement/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/logisticsManagement/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LexicalAnalyzer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../LexicalAnalyzer/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LexicalAnalyzer/src/analyzer/DFA/DFA.java" afterPath="$PROJECT_DIR$/../LexicalAnalyzer/src/analyzer/DFA/DFA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../SyntaxParser/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/Analyzer.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/Analyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/DFA.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/DFA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/TerminalType.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/TerminalType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State0.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State0.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State1.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State2.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State3.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State4.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State5.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State6.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State6.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State7.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State7.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/Token.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/Token.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/main/Main.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Grammar.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Grammar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/NonTerminal.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/NonTerminal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/NonTerminalType.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/NonTerminalType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Production.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Production.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Symbol.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Symbol.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Terminal.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/analyzer/Terminal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/syntax/PPT.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/syntax/PPT.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/syntax/Parser.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/syntaxAnalyzer/syntax/Parser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/bikeSharingDao.java" afterPath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/BikeSharingDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/bikeSharingDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/BikeSharingDaoImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/NFA.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/DFA.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State0.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State0.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State1.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State2.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State2.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State3.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State3.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State4.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State4.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State5.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State5.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State6.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State6.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/NFA/state/State7.java" afterPath="$PROJECT_DIR$/../SyntaxParser/src/lexicalAnalyser/analyzer/DFA/state/State7.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +46,8 @@
       <file leaf-file-name="BikeSharingDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/BikeSharingDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            <state relative-caret-position="128">
+              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -65,8 +56,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="320">
+              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -75,23 +66,30 @@
       <file leaf-file-name="BikeSharingDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/BikeSharingDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="296" column="7" lean-forward="true" selection-start-line="296" selection-start-column="7" selection-end-line="296" selection-end-column="7" />
+            <state relative-caret-position="-1702">
+              <caret line="375" column="58" lean-forward="true" selection-start-line="375" selection-start-column="58" selection-end-line="375" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#insertOthersData#0;class#BikeSharingDaoImpl#0" expanded="false" />
-                <element signature="method#insertAddress#0;class#BikeSharingDaoImpl#0" expanded="false" />
-                <marker date="1509976116180" expanded="true" signature="660:1041" ph="CREATE TABLE... student" />
-                <marker date="1509976116180" expanded="true" signature="1072:1288" ph="CREATE TABLE... bike" />
-                <marker date="1509976116180" expanded="true" signature="1325:1339" ph="CREATE TABLE... bike" />
-                <marker date="1509976116180" expanded="true" signature="1325:1549" ph="CREATE TABLE... maintain" />
-                <marker date="1509976116180" expanded="true" signature="1580:1594" ph="CREATE TABLE... dormitory" />
-                <marker date="1509976116180" expanded="true" signature="1580:2012" ph="CREATE TABLE... ride" />
-                <marker date="1509976116180" expanded="true" signature="3222:3302" ph="insert into ride... " />
-                <marker date="1509976116180" expanded="true" signature="5659:5717" ph="insert into ride... " />
-                <marker date="1509976116180" expanded="true" signature="5749:5780" ph="insert into bike... " />
-                <marker date="1509976116180" expanded="true" signature="5816:5851" ph="insert into user... " />
-                <marker date="1509976116180" expanded="true" signature="8719:8762" ph="UPDATE `user... " />
+                <marker date="1510046284095" expanded="true" signature="711:1090" ph="CREATE TABLE... student" />
+                <marker date="1510046284095" expanded="true" signature="1121:1337" ph="CREATE TABLE... bike" />
+                <marker date="1510046284095" expanded="true" signature="1374:1388" ph="CREATE TABLE... bike" />
+                <marker date="1510046284095" expanded="true" signature="1374:1598" ph="CREATE TABLE... maintain" />
+                <marker date="1510046284095" expanded="true" signature="1629:1643" ph="CREATE TABLE... dormitory" />
+                <marker date="1510046284095" expanded="true" signature="1629:2061" ph="CREATE TABLE... ride" />
+                <marker date="1510046284095" expanded="true" signature="3283:3363" ph="insert into ride... " />
+                <marker date="1510046284095" expanded="true" signature="5667:5725" ph="insert into ride... " />
+                <marker date="1510046284095" expanded="true" signature="5757:5797" ph="insert into bike... " />
+                <marker date="1510046284095" expanded="true" signature="8311:8703" ph="SELECT A.uid... uid" />
+                <marker date="1510046284095" expanded="true" signature="8395:8629" ph="SELECT r.uid... " />
+                <marker date="1510046284095" expanded="true" signature="11276:11415" ph="SELECT user.... " />
+                <marker date="1510046284095" expanded="true" signature="11276:11447" ph="SELECT dormi... student" />
+                <marker date="1510046284095" expanded="true" signature="11276:11481" ph="SELECT user.... " />
+                <marker date="1510046284095" expanded="true" signature="11508:11536" ph="SELECT user.... " />
+                <marker date="1510046284095" expanded="true" signature="11572:11649" ph="UPDATE `user... " />
+                <marker date="1510046284095" expanded="true" signature="11685:11729" ph="UPDATE `bike... " />
+                <marker date="1510046284095" expanded="true" signature="11765:11864" ph="UPDATE `ride... " />
+                <marker date="1510046284095" expanded="true" signature="16817:16856" ph="SELECT uid, ride" />
+                <marker date="1510046284095" expanded="true" signature="16885:16957" ph="SELECT end F... " />
               </folding>
             </state>
           </provider>
@@ -100,8 +98,8 @@
       <file leaf-file-name="sql.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="142">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -145,10 +143,10 @@
         <option value="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/LogisticsDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/logisticsManagement/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/logisticsManagement/dao/impl/LogisticsDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql" />
         <option value="$PROJECT_DIR$/src/main/java/bikeSharing/dao/BikeSharingDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql" />
         <option value="$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/BikeSharingDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java" />
       </list>
     </option>
   </component>
@@ -182,6 +180,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,17 +255,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="F:/Node.js/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SyntaxParser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -449,41 +447,43 @@
       <workItem from="1509808726625" duration="109000" />
       <workItem from="1509962465673" duration="12992000" />
       <workItem from="1509979267913" duration="62000" />
+      <workItem from="1510020497845" duration="4795000" />
+      <workItem from="1510033652971" duration="10904000" />
+      <workItem from="1510045311595" duration="1031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67607000" />
+    <option name="totallyTimeSpent" value="84337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3327616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31046313" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20801815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20272315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -495,7 +495,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -790,14 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/user.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -807,46 +801,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logisticsManagement/dao/impl/LogisticsDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="210" column="90" lean-forward="false" selection-start-line="210" selection-start-column="22" selection-end-line="210" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="20">
+          <caret line="263" column="29" lean-forward="false" selection-start-line="263" selection-start-column="12" selection-end-line="263" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/BikeSharingDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        <state relative-caret-position="128">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/sql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bikeSharing/dao/impl/BikeSharingDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="296" column="7" lean-forward="true" selection-start-line="296" selection-start-column="7" selection-end-line="296" selection-end-column="7" />
+        <state relative-caret-position="-1702">
+          <caret line="375" column="58" lean-forward="true" selection-start-line="375" selection-start-column="58" selection-end-line="375" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#insertOthersData#0;class#BikeSharingDaoImpl#0" expanded="false" />
-            <element signature="method#insertAddress#0;class#BikeSharingDaoImpl#0" expanded="false" />
-            <marker date="1509976116180" expanded="true" signature="660:1041" ph="CREATE TABLE... student" />
-            <marker date="1509976116180" expanded="true" signature="1072:1288" ph="CREATE TABLE... bike" />
-            <marker date="1509976116180" expanded="true" signature="1325:1339" ph="CREATE TABLE... bike" />
-            <marker date="1509976116180" expanded="true" signature="1325:1549" ph="CREATE TABLE... maintain" />
-            <marker date="1509976116180" expanded="true" signature="1580:1594" ph="CREATE TABLE... dormitory" />
-            <marker date="1509976116180" expanded="true" signature="1580:2012" ph="CREATE TABLE... ride" />
-            <marker date="1509976116180" expanded="true" signature="3222:3302" ph="insert into ride... " />
-            <marker date="1509976116180" expanded="true" signature="5659:5717" ph="insert into ride... " />
-            <marker date="1509976116180" expanded="true" signature="5749:5780" ph="insert into bike... " />
-            <marker date="1509976116180" expanded="true" signature="5816:5851" ph="insert into user... " />
-            <marker date="1509976116180" expanded="true" signature="8719:8762" ph="UPDATE `user... " />
+            <marker date="1510046284095" expanded="true" signature="711:1090" ph="CREATE TABLE... student" />
+            <marker date="1510046284095" expanded="true" signature="1121:1337" ph="CREATE TABLE... bike" />
+            <marker date="1510046284095" expanded="true" signature="1374:1388" ph="CREATE TABLE... bike" />
+            <marker date="1510046284095" expanded="true" signature="1374:1598" ph="CREATE TABLE... maintain" />
+            <marker date="1510046284095" expanded="true" signature="1629:1643" ph="CREATE TABLE... dormitory" />
+            <marker date="1510046284095" expanded="true" signature="1629:2061" ph="CREATE TABLE... ride" />
+            <marker date="1510046284095" expanded="true" signature="3283:3363" ph="insert into ride... " />
+            <marker date="1510046284095" expanded="true" signature="5667:5725" ph="insert into ride... " />
+            <marker date="1510046284095" expanded="true" signature="5757:5797" ph="insert into bike... " />
+            <marker date="1510046284095" expanded="true" signature="8311:8703" ph="SELECT A.uid... uid" />
+            <marker date="1510046284095" expanded="true" signature="8395:8629" ph="SELECT r.uid... " />
+            <marker date="1510046284095" expanded="true" signature="11276:11415" ph="SELECT user.... " />
+            <marker date="1510046284095" expanded="true" signature="11276:11447" ph="SELECT dormi... student" />
+            <marker date="1510046284095" expanded="true" signature="11276:11481" ph="SELECT user.... " />
+            <marker date="1510046284095" expanded="true" signature="11508:11536" ph="SELECT user.... " />
+            <marker date="1510046284095" expanded="true" signature="11572:11649" ph="UPDATE `user... " />
+            <marker date="1510046284095" expanded="true" signature="11685:11729" ph="UPDATE `bike... " />
+            <marker date="1510046284095" expanded="true" signature="11765:11864" ph="UPDATE `ride... " />
+            <marker date="1510046284095" expanded="true" signature="16817:16856" ph="SELECT uid, ride" />
+            <marker date="1510046284095" expanded="true" signature="16885:16957" ph="SELECT end F... " />
           </folding>
         </state>
       </provider>
