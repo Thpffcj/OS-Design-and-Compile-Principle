@@ -4,10 +4,7 @@ import lexicalAnalyser.analyzer.DFA.TerminalType;
 import sun.misc.FpUtils;
 
 import javax.naming.NameNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Thpffcj on 2017/11/4.
@@ -26,6 +23,100 @@ public class Grammar {
     private void initGrammar() {
         NonTerminal start = new NonTerminal(NonTerminalType.START);
         List<Production> factors = initFactor();
+        List<Production> T2 = initT2(factors.get(0).getLeft());
+        List<Production> expressions = initExpression(factors.get(0).getLeft(), T2.get(0).getLeft());
+        List<Production> T3 = initT3(factors.get(0).getLeft());
+        List<Production> conditions = initCondition(factors.get(0).getLeft(), T3.get(0).getLeft());
+        List<Production> sentences = initSentence(expressions.get(0).getLeft());
+        List<Production> blocks = initBlock(start);
+        List<Production> ifElse = initIfElse(conditions.get(0).getLeft(), blocks.get(0).getLeft());
+        List<Production> whiles = initWhileLoop(conditions.get(0).getLeft(), blocks.get(0).getLeft());
+        List<Production> fors = initFor(sentences.get(0).getLeft(), conditions.get(0).getLeft(), blocks.get(0).getLeft());
+        List<Production> bases = initBase(fors.get(0).getLeft(), whiles.get(0).getLeft(), ifElse.get(0).getLeft(), sentences.get(0).getLeft());
+        List<Production> DsT1 = initStart(bases.get(0).getLeft(), start);
+        List<Production> Ds = new ArrayList<>();
+        Ds.add(DsT1.get(0));
+        List<Production> T1 = new ArrayList<>();
+        T1.add(DsT1.get(1));
+        T1.add(DsT1.get(2));
+
+        productions.put(NonTerminalType.FACTOR, factors);
+        productions.put(NonTerminalType.TEMP2, T2);
+        productions.put(NonTerminalType.EXPRESSION, expressions);
+        productions.put(NonTerminalType.TEMP3, T3);
+        productions.put(NonTerminalType.CONDITION, conditions);
+        productions.put(NonTerminalType.SENTENCE, sentences);
+        productions.put(NonTerminalType.BLOCK, blocks);
+        productions.put(NonTerminalType.IFELSE, ifElse);
+        productions.put(NonTerminalType.WHILE, whiles);
+        productions.put(NonTerminalType.FOR, fors);
+        productions.put(NonTerminalType.BASE, bases);
+        productions.put(NonTerminalType.START, Ds);
+        productions.put(NonTerminalType.TEMP1, T1);
+    }
+
+    public Map<NonTerminalType,Map<TerminalType,List<Production>>> generatePPT() {
+        initPPT();
+        Set<Map.Entry<NonTerminalType, List<Production>>> entries = productions.entrySet();
+        Iterator<Map.Entry<NonTerminalType,List<Production>>> iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<NonTerminalType,List<Production>> entry = iterator.next();
+            List<Production> productions = entry.getValue();
+            for (Production p : productions) {
+                Set<TerminalType> first = p.getFirstOfRight();
+                if (first.contains(TerminalType.NULL)) {
+
+                }
+                for (TerminalType t : first) {
+                    ppt.get(entry.getKey()).get(t).add(p);
+                }
+            }
+        }
+        return null;
+    }
+
+    private void initPPT() {
+        ppt = new HashMap<>();
+        TerminalType[] allTerminals = TerminalType.values();
+        NonTerminalType[] allNonTerminals = NonTerminalType.values();
+        for (NonTerminalType nonTerminalType : allNonTerminals) {
+            Map<TerminalType, List<Production>> terminals = new HashMap<>();
+            for (TerminalType terminalType : allTerminals) {
+                List<Production> productions = new ArrayList<>();
+                terminals.put(terminalType, productions);
+            }
+            ppt.put(nonTerminalType, terminals);
+        }
+    }
+
+    private Set<TerminalType> follow(NonTerminal nonTerminal, List<NonTerminal> trace) {
+        Set<Map.Entry<NonTerminalType,List<Production>>> entries = productions.entrySet();
+        Iterator<Map.Entry<NonTerminalType,List<Production>>> iterator = entries.iterator();
+        Set<TerminalType> follow = new HashSet<>();
+
+        // Start 的 follow 是 $
+        if (nonTerminal.getType().equals(NonTerminalType.START)) {
+            follow.add(TerminalType.END);
+        }
+
+        while (iterator.hasNext()) {
+            Map.Entry<NonTerminalType,List<Production>> entry = iterator.next();
+            List<Production> productions = entry.getValue();
+            // 遍历全部产生式
+            for (Production p : productions) {
+                // 避免无限递归
+                if (p.isEndOfSelf(nonTerminal)){
+                    continue;
+                }
+            }
+        }
+        return null;
+    }
+
+    private void addNull(List<Production> productions) {
+        for (Production p : productions) {
+            p.addSymbol(new Terminal(TerminalType.NULL));
+        }
     }
 
     private List<Production> initFactor() {
@@ -279,30 +370,62 @@ public class Grammar {
         return productions;
     }
 
-    private void addNull(List<Production> productions) {
-        for (Production p : productions) {
-            p.addSymbol(new Terminal(TerminalType.NULL));
-        }
+    private List<Production> initBase(NonTerminal For , NonTerminal While, NonTerminal IfElse, NonTerminal Sentense) {
+        NonTerminal base = new NonTerminal(NonTerminalType.BASE);
+
+        Terminal semicolon = new Terminal(TerminalType.SEMICOLON);
+
+        Production b1 = new Production(base);
+        b1.addSymbol(For);
+        Production b2 = new Production(base);
+        b2.addSymbol(While);
+        Production b3 = new Production(base);
+        b3.addSymbol(IfElse);
+        Production b4 = new Production(base);
+        b4.addSymbol(Sentense);
+        b4.addSymbol(semicolon);
+
+        List<Production> productions = new ArrayList<>();
+        productions.add(b1);
+        productions.add(b2);
+        productions.add(b3);
+        productions.add(b4);
+
+        base.setProductions(productions);
+        addNull(productions);
+        return productions;
     }
 
-    private void initPPT() {
-        ppt = new HashMap<>();
-        TerminalType[] allTerminals = TerminalType.values();
-        NonTerminalType[] allNonTerminals = NonTerminalType.values();
-        for (NonTerminalType nonTerminalType : allNonTerminals) {
-            Map<TerminalType, List<Production>> terminals = new HashMap<>();
-            for (TerminalType terminalType : allTerminals) {
-                List<Production> productions = new ArrayList<>();
-                terminals.put(terminalType, productions);
-            }
-            ppt.put(nonTerminalType, terminals);
-        }
-    }
+    private List<Production> initStart(NonTerminal base, NonTerminal start) {
+        NonTerminal T1 = new NonTerminal(NonTerminalType.TEMP1);
 
+        Terminal n = new Terminal(TerminalType.NULL);
 
+        Production p1 = new Production(start);
+        p1.addSymbol(base);
+        p1.addSymbol(T1);
 
-    public Map<NonTerminalType,Map<TerminalType,List<Production>>> generatePPT() {
-        initPPT();
-        return null;
+        List<Production> productions1 = new ArrayList<>();
+        productions1.add(p1);
+
+        start.setProductions(productions1);
+
+        Production t1 = new Production(T1);
+        t1.addSymbol(start);
+
+        Production t2 = new Production(T1);
+        t2.addSymbol(n);
+
+        List<Production> productions2 = new ArrayList<>();
+        productions2.add(t1);
+        productions2.add(t2);
+
+        T1.setProductions(productions2);
+
+        List<Production> productions = new ArrayList<>();
+        productions.addAll(productions1);
+        productions.addAll(productions2);
+        addNull(productions);
+        return productions;
     }
 }
