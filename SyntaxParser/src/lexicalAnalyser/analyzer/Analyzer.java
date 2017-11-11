@@ -66,7 +66,7 @@ public class Analyzer {
 
     private void outputError() {
         FileHandler fileHandler = FileHandler.getInstance();
-        fileHandler.outputError(previousLineNum);
+        fileHandler.outputLexicalError(previousLineNum);
     }
 
     private void outputResult() {

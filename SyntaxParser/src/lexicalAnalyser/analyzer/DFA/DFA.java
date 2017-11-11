@@ -64,12 +64,12 @@ public class DFA {
             if (-1 == state) {
                 // 上一状态为接受状态
                 if (states.get(lastState).isEnd()) {
-                    Token.TokenType type = states.get(lastState).getTokenType();
+                    TerminalType type = states.get(lastState).getTokenType();
                     // 是ID,查变量表
-                    if (Token.TokenType.ID == type) {
+                    if (TerminalType.ID == type) {
                         int posInVarTable = varTable.add(lexeme.toString());
                         token = new Token(type, posInVarTable);
-                    } else if (Token.TokenType.CONSTANT == type) {
+                    } else if (TerminalType.CONSTANT == type) {
                         // 是数值常量,查常量表
                         double value = Double.parseDouble(lexeme.toString());
                         int posInConsTable = constantTable.add(value);

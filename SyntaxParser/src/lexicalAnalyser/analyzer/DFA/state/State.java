@@ -1,8 +1,7 @@
 package lexicalAnalyser.analyzer.DFA.state;
 
 
-import lexicalAnalyser.analyzer.Token;
-
+import lexicalAnalyser.analyzer.DFA.TerminalType;
 /**
  * Created by Thpffcj on 2017/10/20.
  */
@@ -12,5 +11,5 @@ public interface State {
 
     public boolean isEnd();
 
-    public Token.TokenType getTokenType();
+    public TerminalType getTokenType();
 }

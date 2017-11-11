@@ -3,6 +3,7 @@ package lexicalAnalyser.io;
 
 import lexicalAnalyser.analyzer.Table;
 import lexicalAnalyser.analyzer.Token;
+import syntaxAnalyzer.analyzer.Production;
 
 import java.io.*;
 import java.util.List;
@@ -17,7 +18,10 @@ public class FileHandler {
     private static String TOKEN_FILE_NAME = "token.txt";
     public static String VARIABLE_TABLE_FILE_NAME = "var_table.txt";
     public static String CONSTANT_TABLE_FILE_NAME = "cons_table.txt";
-    private static String ERROR_LOG = "Error at line ";
+    private static String PRODUCTION_FILE_NAME = "production.txt";
+//    private static String ERROR_LOG = "Error at line ";
+    private static String LEXICAL_ERROR_LOG = "Lexical analyze error at line ";
+    private static String SYNTAX_ERROR_LOG = "Syntax parse Error";
 
     private File sourceFile;
 
@@ -68,6 +72,18 @@ public class FileHandler {
         writeFile(tokenFile, tokenContent.toString());
     }
 
+    public void outputProduction(List<Production> productions){
+        String path = getSourceParentPath();
+        path += PRODUCTION_FILE_NAME;
+        File tokenFile = openOutputFile(path);
+        StringBuilder tokenContent = new StringBuilder();
+        for (Production token : productions){
+            tokenContent.append(token);
+            tokenContent.append("\r\n");
+        }
+        writeFile(tokenFile,tokenContent.toString());
+    }
+
     public void outputTable(Table table, String fileName) {
 //        String path = getSourceParentPath();
         String path = fileName;
@@ -75,12 +91,20 @@ public class FileHandler {
         writeFile(varTableFile, table.toString());
     }
 
-    public void outputError(int lineNum) {
-//        String path = getSourceParentPath();
-        String path =  TOKEN_FILE_NAME;
+    public void outputLexicalError(int lineNum){
+        outputError(lineNum+"" , LEXICAL_ERROR_LOG, TOKEN_FILE_NAME);
+    }
+
+    public void outputSyntaxError(){
+        outputError("",SYNTAX_ERROR_LOG,PRODUCTION_FILE_NAME);
+    }
+
+    private void outputError(String position , String log ,String file){
+        String path = getSourceParentPath();
+        path += file;
         File tokenFile = openOutputFile(path);
-        String errorInfo = ERROR_LOG + lineNum;
-        writeFile(tokenFile, errorInfo);
+        String errorInfo = log + position;
+        writeFile(tokenFile,errorInfo);
     }
 
     private String getSourceParentPath(){

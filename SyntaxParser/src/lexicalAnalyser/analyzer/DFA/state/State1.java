@@ -1,6 +1,9 @@
 package lexicalAnalyser.analyzer.DFA.state;
 
-import analyzer.Token;
+
+
+import lexicalAnalyser.analyzer.DFA.TerminalType;
+import lexicalAnalyser.analyzer.Token;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,15 +14,15 @@ import java.util.Map;
 public class State1 implements State {
 
     public static int STATE_INDEX = 1;
-    private static final Map<String, Token.TokenType> reserved;
+    private static final Map<String, TerminalType> reserved;
     private String lexeme;
 
     static {
         reserved = new HashMap<>();
-        reserved.put(Token.TokenType.IF.getValue(), Token.TokenType.IF);
-        reserved.put(Token.TokenType.ELSE.getValue(), Token.TokenType.ELSE);
-        reserved.put(Token.TokenType.FOR.getValue(), Token.TokenType.FOR);
-        reserved.put(Token.TokenType.WHILE.getValue(), Token.TokenType.WHILE);
+        reserved.put(TerminalType.IF.getValue(), TerminalType.IF);
+        reserved.put(TerminalType.ELSE.getValue(), TerminalType.ELSE);
+        reserved.put(TerminalType.FOR.getValue(), TerminalType.FOR);
+        reserved.put(TerminalType.WHILE.getValue(), TerminalType.WHILE);
     }
 
     @Override
@@ -38,12 +41,12 @@ public class State1 implements State {
     }
 
     @Override
-    public Token.TokenType getTokenType() {
-        Token.TokenType type = reserved.get(lexeme);
+    public TerminalType getTokenType() {
+        TerminalType type = reserved.get(lexeme);
         if (null != type) {
             return type;
         } else {
-            return Token.TokenType.ID;
+            return TerminalType.ID;
         }
     }
 }

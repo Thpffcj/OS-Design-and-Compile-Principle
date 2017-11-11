@@ -54,11 +54,34 @@ public class Production {
         List<Production> productions = new ArrayList<>();
         List<Symbol> right2 = new LinkedList<>();
         right2.addAll(right);
-
-        return null;
+        // 可能包含多个
+        while (right2.contains(nonTerminal)) {
+           Production sub = new Production(null);
+            // 获取非终结符右侧的子串
+            for (int i = right2.indexOf(nonTerminal) + 1 ; i < right2.size() ; i++){
+                sub.addSymbol(right2.get(i));
+            }
+            // 将包括目标非终结符的左侧子串删掉
+            for (int i = right2.indexOf(nonTerminal); i >= 0; i--) {
+                right2.remove(i);
+            }
+            productions.add(sub);
+        }
+        if (productions.size() == 0) {
+            return null;
+        }
+        return productions;
     }
 
     public void addSymbol(Symbol symbol) {
         right.add(symbol);
+    }
+
+    @Override
+    public String toString() {
+        return "Production{" +
+                "left=" + left +
+                ", right=" + right +
+                '}';
     }
 }

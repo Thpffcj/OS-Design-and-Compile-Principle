@@ -11,7 +11,10 @@ import java.util.List;
  */
 public class Main {
 
-    Analyzer lexicalAnalyzer = new Analyzer();
-    List<Token> tokens = lexicalAnalyzer.parse();
-    Parser syntaxParser = new Parser(tokens);
+    public static void main(String[] args) {
+        Analyzer lexicalAnalyzer = new Analyzer();
+        List<Token> tokens = lexicalAnalyzer.parse();
+        Parser syntaxParser = new Parser(tokens);
+        syntaxParser.parse();
+    }
 }

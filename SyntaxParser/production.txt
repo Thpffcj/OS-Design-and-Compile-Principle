@@ -1,0 +1,107 @@
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[While, ~]}
+Production{left=While, right=[while, (, Condition, ), Block, ~]}
+Production{left=Condition, right=[Factor, T3, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T3, right=[==, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=Block, right=[{, Start, }, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T2, right=[+, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T1, right=[Start, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T2, right=[+, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T1, right=[Start, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[IfElse, ~]}
+Production{left=IfElse, right=[if, (, Condition, ), Block, else, Block, ~]}
+Production{left=Condition, right=[Factor, T3, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T3, right=[==, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=Block, right=[{, Start, }, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T2, right=[~, ~]}
+Production{left=T1, right=[~, ~]}
+Production{left=Block, right=[{, Start, }, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T2, right=[~, ~]}
+Production{left=T1, right=[~, ~]}
+Production{left=T1, right=[~, ~]}
+Production{left=T1, right=[Start, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[For, ~]}
+Production{left=For, right=[for, (, Sentence, ;, Condition, ;, Sentence, ), Block, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T2, right=[~, ~]}
+Production{left=Condition, right=[Factor, T3, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T3, right=[<, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T2, right=[+, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=Block, right=[{, Start, }, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T2, right=[+, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T1, right=[Start, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T2, right=[+, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T1, right=[Start, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[While, ~]}
+Production{left=While, right=[while, (, Condition, ), Block, ~]}
+Production{left=Condition, right=[Factor, T3, ~]}
+Production{left=Factor, right=[id, ~]}
+Production{left=T3, right=[==, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=Block, right=[{, Start, }, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T2, right=[+, Factor, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T1, right=[Start, ~]}
+Production{left=Start, right=[Base, T1, ~]}
+Production{left=Base, right=[Sentence, ;, ~]}
+Production{left=Sentence, right=[id, =, Expression, ~]}
+Production{left=Expression, right=[Factor, T2, ~]}
+Production{left=Factor, right=[constant, ~]}
+Production{left=T2, right=[~, ~]}
+Production{left=T1, right=[~, ~]}
+Production{left=T1, right=[~, ~]}
+Production{left=T1, right=[~, ~]}

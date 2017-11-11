@@ -1,6 +1,6 @@
 package lexicalAnalyser.analyzer.DFA.state;
 
-import analyzer.Token;
+import lexicalAnalyser.analyzer.DFA.TerminalType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,14 +11,14 @@ import java.util.Map;
 public class State5 implements State {
 
     public static int STATE_INDEX = 5;
-    private static final Map<String, Token.TokenType> symbols;
+    private static final Map<String, TerminalType> symbols;
     private String lexeme;
 
     static {
         symbols = new HashMap<>();
-        symbols.put(Token.TokenType.GREATER.getValue(), Token.TokenType.GREATER);
-        symbols.put(Token.TokenType.SMALLER.getValue(), Token.TokenType.SMALLER);
-        symbols.put(Token.TokenType.ASSIGNMENT.getValue(), Token.TokenType.ASSIGNMENT);
+        symbols.put(TerminalType.GREATER.getValue(), TerminalType.GREATER);
+        symbols.put(TerminalType.SMALLER.getValue(), TerminalType.SMALLER);
+        symbols.put(TerminalType.ASSIGNMENT.getValue(), TerminalType.ASSIGNMENT);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class State5 implements State {
     }
 
     @Override
-    public Token.TokenType getTokenType() {
+    public TerminalType getTokenType() {
         return symbols.get(lexeme);
     }
 }

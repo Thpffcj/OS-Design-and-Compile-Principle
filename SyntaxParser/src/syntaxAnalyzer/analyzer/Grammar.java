@@ -65,14 +65,14 @@ public class Grammar {
             for (Production p : productions) {
                 Set<TerminalType> first = p.getFirstOfRight();
                 if (first.contains(TerminalType.NULL)) {
-
+                    first.addAll(follow(p.getLeft(), new ArrayList<>()));
                 }
                 for (TerminalType t : first) {
                     ppt.get(entry.getKey()).get(t).add(p);
                 }
             }
         }
-        return null;
+        return ppt;
     }
 
     private void initPPT() {
@@ -108,9 +108,28 @@ public class Grammar {
                 if (p.isEndOfSelf(nonTerminal)){
                     continue;
                 }
+                List<Production> afterN = p.after(nonTerminal);
+                // 说明当前表达式包含该非终结符
+                if (afterN != null) {
+                    Set<TerminalType> first = new HashSet<>();
+                    for (Production pro : afterN) {
+                        first.addAll(pro.getFirstOfRight());
+                        follow.addAll(first);
+                    }
+                    // 包含空字符
+                    if (first.contains(TerminalType.NULL)) {
+                        if (!trace.contains(p.getLeft())) {
+                            trace.add(p.getLeft());
+                            // 右边最后的follow是左边的follow
+                            follow.addAll(follow(p.getLeft(), trace));
+                        }
+                    } else {
+                        continue;
+                    }
+                }
             }
         }
-        return null;
+        return follow;
     }
 
     private void addNull(List<Production> productions) {
@@ -268,7 +287,7 @@ public class Grammar {
         production.addSymbol(expression);
 
         List<Production> productions = new ArrayList<>();
-        production.addSymbol(sentence);
+        productions.add(production);
 
         sentence.setProductions(productions);
         addNull(productions);
@@ -289,7 +308,7 @@ public class Grammar {
         production.addSymbol(rBrace);
 
         List<Production> productions = new ArrayList<>();
-        production.addSymbol(block);
+        productions.add(production);
 
         block.setProductions(productions);
         addNull(productions);
@@ -359,7 +378,7 @@ public class Grammar {
         production.addSymbol(condition);
         production.addSymbol(semicolon);
         production.addSymbol(sentence);
-        production.addSymbol(lBracket);
+        production.addSymbol(rBracket);
         production.addSymbol(block);
 
         List<Production> productions = new ArrayList<>();

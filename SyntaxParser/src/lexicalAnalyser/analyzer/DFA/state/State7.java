@@ -1,6 +1,7 @@
 package lexicalAnalyser.analyzer.DFA.state;
 
-import analyzer.Token;
+
+import lexicalAnalyser.analyzer.DFA.TerminalType;
 
 /**
  * Created by Thpffcj on 2017/10/21.
@@ -24,7 +25,7 @@ public class State7 implements State {
     }
 
     @Override
-    public Token.TokenType getTokenType() {
-        return null;
+    public TerminalType getTokenType() {
+        return TerminalType.CONSTANT;
     }
 }

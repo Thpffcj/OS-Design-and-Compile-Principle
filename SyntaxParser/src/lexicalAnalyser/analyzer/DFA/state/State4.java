@@ -1,6 +1,6 @@
 package lexicalAnalyser.analyzer.DFA.state;
 
-import analyzer.Token;
+import lexicalAnalyser.analyzer.DFA.TerminalType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,20 +11,20 @@ import java.util.Map;
 public class State4 implements State {
 
     public static int STATE_INDEX = 4;
-    private static final Map<String, Token.TokenType> symbols;
+    private static final Map<String, TerminalType> symbols;
     private String lexeme;
 
     static {
         symbols = new HashMap<>();
-        symbols.put(Token.TokenType.ADD.getValue(), Token.TokenType.ADD);
-        symbols.put(Token.TokenType.MINUS.getValue(), Token.TokenType.MINUS);
-        symbols.put(Token.TokenType.MULTIPLY.getValue(), Token.TokenType.MULTIPLY);
-        symbols.put(Token.TokenType.DIVID.getValue(), Token.TokenType.DIVID);
-        symbols.put(Token.TokenType.L_BRACKET.getValue(), Token.TokenType.L_BRACKET);
-        symbols.put(Token.TokenType.R_BRACKET.getValue(), Token.TokenType.R_BRACKET);
-        symbols.put(Token.TokenType.L_BRACE.getValue(), Token.TokenType.L_BRACE);
-        symbols.put(Token.TokenType.R_BRACE.getValue(), Token.TokenType.R_BRACE);
-        symbols.put(Token.TokenType.SEMICOLON.getValue(), Token.TokenType.SEMICOLON);
+        symbols.put(TerminalType.ADD.getValue(), TerminalType.ADD);
+        symbols.put(TerminalType.MINUS.getValue(), TerminalType.MINUS);
+        symbols.put(TerminalType.MULTIPLY.getValue(), TerminalType.MULTIPLY);
+        symbols.put(TerminalType.DIVIDE.getValue(), TerminalType.DIVIDE);
+        symbols.put(TerminalType.L_BRACKET.getValue(), TerminalType.L_BRACKET);
+        symbols.put(TerminalType.R_BRACKET.getValue(), TerminalType.R_BRACKET);
+        symbols.put(TerminalType.L_BRACE.getValue(), TerminalType.L_BRACE);
+        symbols.put(TerminalType.R_BRACE.getValue(), TerminalType.R_BRACE);
+        symbols.put(TerminalType.SEMICOLON.getValue(), TerminalType.SEMICOLON);
     }
 
     @Override
@@ -39,8 +39,8 @@ public class State4 implements State {
     }
 
     @Override
-    public Token.TokenType getTokenType() {
-        Token.TokenType type = symbols.get(lexeme);
+    public TerminalType getTokenType() {
+        TerminalType type = symbols.get(lexeme);
         return type;
     }
 }
