@@ -4,3 +4,8 @@
 /DatabaseCourse/src/main/resources/record.txt
 /DatabaseCourse/src/main/resources/user.txt
 /DatabaseCourse/target/
+
+*.iml
+*.idea
+target
+
